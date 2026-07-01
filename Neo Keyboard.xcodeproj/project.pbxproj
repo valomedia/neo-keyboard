@@ -15,6 +15,10 @@
 		E1B34BB829159BB100495A18 /* Bool+else.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9720086835F3326886B55 /* Bool+else.swift */; };
 		E1B34BB929159BB100495A18 /* Bool+then.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E97088C34D597A778A7F9C /* Bool+then.swift */; };
 		E1C83A0927E682870015B7D3 /* KeyboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = E1C83A0827E682870015B7D3 /* KeyboardKit */; };
+		E20000042E1CF00000000004 /* GermanNeoUtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20000012E1CF00000000001 /* GermanNeoUtilityTests.swift */; };
+		E20000052E1CF00000000005 /* Bool+else.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9720086835F3326886B55 /* Bool+else.swift */; };
+		E20000062E1CF00000000006 /* Bool+then.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E97088C34D597A778A7F9C /* Bool+then.swift */; };
+		E20000072E1CF00000000007 /* Sequence+compacted.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E97EBD073D2FF98A696E28 /* Sequence+compacted.swift */; };
 		E9E9714F7009332ED014BFD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E97CFFD85392ACF4FE2113 /* ContentView.swift */; };
 		E9E975A35A40214F06D9785B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9E97222BF73749A8ABBDE7E /* Preview Assets.xcassets */; };
 		E9E97AF83C35D7FA7B339718 /* NeoKeyboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E97A13AF69EFF6029B385B /* NeoKeyboardApp.swift */; };
@@ -52,6 +56,8 @@
 		E163EF8F27E5F88F003DCBE5 /* German Neo.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "German Neo.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E163EF9127E5F88F003DCBE5 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		E163EF9327E5F88F003DCBE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E20000012E1CF00000000001 /* GermanNeoUtilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GermanNeoUtilityTests.swift; sourceTree = "<group>"; };
+		E20000032E1CF00000000003 /* German NeoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "German NeoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B5F73B2D84A1F300E20BCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1DC75502D4E79E50071629E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E9E97088C34D597A778A7F9C /* Bool+then.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+then.swift"; sourceTree = "<group>"; };
@@ -81,6 +87,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E20000082E1CF00000000008 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -98,6 +111,14 @@
 			path = "German Neo";
 			sourceTree = "<group>";
 		};
+		E20000022E1CF00000000002 /* German NeoTests */ = {
+			isa = PBXGroup;
+			children = (
+				E20000012E1CF00000000001 /* GermanNeoUtilityTests.swift */,
+			);
+			path = "German NeoTests";
+			sourceTree = "<group>";
+		};
 		E1B34BB42915944C00495A18 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +131,7 @@
 			children = (
 				E9E976107CC53B32F389D4E4 /* Neo Keyboard.app */,
 				E163EF8F27E5F88F003DCBE5 /* German Neo.appex */,
+				E20000032E1CF00000000003 /* German NeoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,6 +162,7 @@
 				E1DC75502D4E79E50071629E /* LICENSE */,
 				E101F8CF2C46B0F80039CD6C /* README.md */,
 				E163EF9027E5F88F003DCBE5 /* German Neo */,
+				E20000022E1CF00000000002 /* German NeoTests */,
 				E9E975BC38E14F86A180EB12 /* Products */,
 				E9E9787F777A41B47A8E2083 /* Neo Keyboard */,
 				E1B34BB42915944C00495A18 /* Frameworks */,
@@ -169,6 +192,25 @@
 			productName = "German (Neo)";
 			productReference = E163EF8F27E5F88F003DCBE5 /* German Neo.appex */;
 			productType = "com.apple.product-type.app-extension";
+		};
+		E200000B2E1CF0000000000B /* German NeoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E200000C2E1CF0000000000C /* Build configuration list for PBXNativeTarget "German NeoTests" */;
+			buildPhases = (
+				E200000A2E1CF0000000000A /* Sources */,
+				E20000082E1CF00000000008 /* Frameworks */,
+				E20000092E1CF00000000009 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "German NeoTests";
+			packageProductDependencies = (
+			);
+			productName = "German NeoTests";
+			productReference = E20000032E1CF00000000003 /* German NeoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		E9E9746E5D687F9B248A918C /* Neo Keyboard */ = {
 			isa = PBXNativeTarget;
@@ -206,6 +248,10 @@
 						CreatedOnToolsVersion = 13.2.1;
 						ProvisioningStyle = Automatic;
 					};
+					E200000B2E1CF0000000000B = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = E163EF8E27E5F88F003DCBE5;
+					};
 				};
 			};
 			buildConfigurationList = E9E971FD2E5E4180F51517DE /* Build configuration list for PBXProject "Neo Keyboard" */;
@@ -226,6 +272,7 @@
 			targets = (
 				E9E9746E5D687F9B248A918C /* Neo Keyboard */,
 				E163EF8E27E5F88F003DCBE5 /* German Neo */,
+				E200000B2E1CF0000000000B /* German NeoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -244,6 +291,13 @@
 			files = (
 				E9E97E44C70E4F10127E66DE /* Assets.xcassets in Resources */,
 				E9E975A35A40214F06D9785B /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E20000092E1CF00000000009 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +323,17 @@
 			files = (
 				E9E97AF83C35D7FA7B339718 /* NeoKeyboardApp.swift in Sources */,
 				E9E9714F7009332ED014BFD5 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E200000A2E1CF0000000000A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E20000042E1CF00000000004 /* GermanNeoUtilityTests.swift in Sources */,
+				E20000052E1CF00000000005 /* Bool+else.swift in Sources */,
+				E20000062E1CF00000000006 /* Bool+then.swift in Sources */,
+				E20000072E1CF00000000007 /* Sequence+compacted.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +393,46 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E200000D2E1CF0000000000D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "media.valo.Neo-Keyboard.German-NeoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "German Neo";
+			};
+			name = Debug;
+		};
+		E200000E2E1CF0000000000E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "media.valo.Neo-Keyboard.German-NeoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "German Neo";
 			};
 			name = Release;
 		};
@@ -523,6 +628,15 @@
 			buildConfigurations = (
 				E163EF9827E5F88F003DCBE5 /* Debug */,
 				E163EF9927E5F88F003DCBE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E200000C2E1CF0000000000C /* Build configuration list for PBXNativeTarget "German NeoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E200000D2E1CF0000000000D /* Debug */,
+				E200000E2E1CF0000000000E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
