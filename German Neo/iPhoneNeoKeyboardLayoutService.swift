@@ -22,11 +22,17 @@ class iPhoneNeoKeyboardLayoutService: KeyboardLayout.iPhoneLayoutService {
         }
     }
 
-    override func lowerLeadingActions(for actions: KeyboardAction.Rows, context: KeyboardContext) -> KeyboardAction.Row {
+    override func lowerLeadingActions(
+            for actions: KeyboardAction.Rows,
+            context: KeyboardContext
+    ) -> KeyboardAction.Row {
         []
     }
 
-    override func lowerTrailingActions(for actions: KeyboardAction.Rows, context: KeyboardContext) -> KeyboardAction.Row {
+    override func lowerTrailingActions(
+            for actions: KeyboardAction.Rows,
+            context: KeyboardContext
+    ) -> KeyboardAction.Row {
         [.backspace]
     }
 

@@ -28,6 +28,9 @@ playground.xcworkspace
 *.xcframework/
 *.framework/
 
+# CocoaPods
+Pods/
+
 #
 # Swift Package Manager
 #

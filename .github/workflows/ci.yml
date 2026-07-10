@@ -30,14 +30,8 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v7
 
-      - name: Run Xcode static analysis
-        run: |
-          set -euo pipefail
-          xcodebuild analyze \
-            -project "Neo Keyboard.xcodeproj" \
-            -scheme "German Neo" \
-            -destination "generic/platform=iOS" \
-            CODE_SIGNING_ALLOWED=NO
+      - name: Run SwiftLint
+        run: scripts/lint
 
   build:
     name: Build

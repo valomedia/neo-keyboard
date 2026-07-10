@@ -5,12 +5,12 @@ with some minor tweaks to make it work on a small touch screen.
 
 ## Development
 
-Run Xcode static analysis locally with:
+Run SwiftLint locally with:
 
 ```sh
-xcodebuild analyze \
-  -project "Neo Keyboard.xcodeproj" \
-  -scheme "German Neo" \
-  -destination "generic/platform=iOS" \
-  CODE_SIGNING_ALLOWED=NO
+scripts/lint
 ```
+
+The lint command fetches the exactly pinned SwiftLint tool with CocoaPods
+and then runs it as a standalone check.
+It is not wired into the Xcode build phases.
