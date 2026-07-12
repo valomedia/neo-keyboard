@@ -2,9 +2,6 @@
 //  ContentView.swift
 //  Neo Keyboard
 //
-//  Created by Jean-Pierre Höhmann on 19.03.22.
-//
-//
 
 import Foundation
 import SwiftUI
