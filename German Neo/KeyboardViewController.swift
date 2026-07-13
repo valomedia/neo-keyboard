@@ -2,8 +2,6 @@
 //  KeyboardViewController.swift
 //  German (Neo)
 //
-//  Created by Jean-Pierre Höhmann on 19.03.22.
-//
 
 import Foundation
 import UIKit
