@@ -11,6 +11,6 @@ Run SwiftLint locally with:
 scripts/lint
 ```
 
-The lint command fetches the exactly pinned SwiftLint tool with CocoaPods
+The lint command fetches the exactly pinned SwiftLint tool with Swift Package Manager
 and then runs it as a standalone check.
 It is not wired into the Xcode build phases.
