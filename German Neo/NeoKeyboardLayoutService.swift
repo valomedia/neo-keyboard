@@ -2,9 +2,6 @@
 //  NeoKeyboardLayoutProvider.swift
 //  German (Neo)
 //
-//  Created by Jean-Pierre Höhmann on 2023-12-06.
-//
-//
 
 import Foundation
 import KeyboardKit

@@ -2,9 +2,6 @@
 //  Bool+then.swift
 //  Neo Keyboard
 //
-//  Created by Jean-Pierre Höhmann on 2022-11-04.
-//
-//
 
 import Foundation
 
