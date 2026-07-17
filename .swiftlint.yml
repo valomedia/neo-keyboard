@@ -1,0 +1,12 @@
+included:
+  - "German Neo"
+  - "German NeoTests"
+  - "Neo Keyboard"
+
+vertical_whitespace:
+  max_empty_lines: 2
+
+type_name:
+  excluded:
+    - ContentView_Previews
+    - iPhoneNeoKeyboardLayoutService

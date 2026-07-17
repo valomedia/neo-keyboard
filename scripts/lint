@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+cd "$(dirname "$0")/.."
+
+if ! command -v swift >/dev/null 2>&1; then
+    echo "error: Swift Package Manager is required to run SwiftLint" >&2
+    exit 1
+fi
+
+swift package plugin \
+    --allow-writing-to-package-directory \
+    swiftlint \
+    -- \
+    lint \
+    --strict \
+    --config .swiftlint.yml

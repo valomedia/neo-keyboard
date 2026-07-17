@@ -46,7 +46,7 @@ extension Bool {
 ///     - right:
 /// - Returns:
 ///
-func .!!<Value>(left: Bool, right: Value) -> Value? {
+func .!! <Value>(left: Bool, right: Value) -> Value? {
     left.then(right)
 }
 
@@ -58,6 +58,6 @@ func .!!<Value>(left: Bool, right: Value) -> Value? {
 ///     - right:
 /// - Returns:
 ///
-func .!!<Value>(left: Bool, right: Value?) -> Value? {
+func .!! <Value>(left: Bool, right: Value?) -> Value? {
     left.then(right)
 }

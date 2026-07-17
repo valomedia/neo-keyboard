@@ -21,8 +21,9 @@ with a few touch-screen-oriented layout tweaks.
 - An Apple development team configured in Xcode if you want to install the app on
   a device.
 
-The project is opened through `Neo Keyboard.xcodeproj`. There is no separate
-command-line package manifest for building the app.
+The project is opened through `Neo Keyboard.xcodeproj`. The root `Package.swift`
+is only used for developer tooling, not for building the app or keyboard
+extension.
 
 ## Getting started
 
@@ -81,12 +82,25 @@ xcodebuild \
 Replace `<Simulator Name>` with a simulator listed by
 `xcrun simctl list devices available`.
 
+## Running lint
+
+Run SwiftLint locally with:
+
+```sh
+scripts/lint
+```
+
+The lint command fetches the exactly pinned SwiftLint tool with Swift Package
+Manager and then runs it as a standalone check. It is not wired into the Xcode
+build phases.
+
 ## Repository layout
 
 - `Neo Keyboard/` contains the SwiftUI host app.
 - `German Neo/` contains the custom keyboard extension and Neo layout services.
 - `German NeoTests/` contains XCTest coverage for shared utility behavior.
 - `Neo Keyboard.xcodeproj/xcshareddata/xcschemes/` contains the shared Xcode schemes.
+- `Package.swift` pins the SwiftLint SwiftPM plugin used by `scripts/lint`.
 - `PRIVACY` documents the app's privacy behavior.
 - `LICENSE` contains the GNU General Public License v3.0.
 
