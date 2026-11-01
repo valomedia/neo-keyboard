@@ -8,6 +8,6 @@ let package = Package(
         .macOS(.v12),
     ],
     dependencies: [
-        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.64.0"),
+        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.65.1"),
     ]
 )
