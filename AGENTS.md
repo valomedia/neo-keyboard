@@ -5,7 +5,8 @@
 - This is an iOS Swift project for a main app target named `Neo Keyboard`
   and a custom keyboard extension target named `German Neo`.
 - Open the project with `Neo Keyboard.xcodeproj`.
-  There is no Swift Package manifest or separate CLI build system in this repository.
+  The root `Package.swift` only pins the SwiftLint plugin used by `scripts/lint`;
+  it does not build the app or keyboard extension.
 - Xcode resolves `KeyboardKit` from `https://github.com/KeyboardKit/KeyboardKit.git`
   with a minimum version of `9.0.0`.
 - The privacy notice says the app does not collect or store personal data.
@@ -55,6 +56,15 @@
 - To check the extension scheme directly,
   use:
   `xcodebuild -project "Neo Keyboard.xcodeproj" -scheme "German Neo" -destination "generic/platform=iOS" build`
-- There is currently no separate test target in the project.
-  For layout-only changes,
+- The `German NeoTests` target is included in the shared schemes.
+  Run tests with an available simulator destination as documented in `README.md`.
+- For layout-only changes,
   at minimum inspect the changed row strings and build both shared schemes when possible.
+- Run strict SwiftLint with `scripts/lint`.
+- `.github/workflows/ci.yml` calls the shared
+  `valomedia/github-workflows/.github/workflows/ios-ci.yml` workflow.
+  The shared workflow owns concurrency and simulator creation.
+  Keep CocoaPods installation disabled because this project uses Swift Package Manager.
+  Custom `-project` commands preserve the generic iOS build and simulator unit tests;
+  tests use the shared workflow's `IOS_CI_SIMULATOR_UDID`.
+  The required `workspace` input is unused by these custom commands.
