@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   ci:
-    uses: valomedia/github-workflows/.github/workflows/ios-ci.yml@0e24ac0bdeb710a9d37ff088d95fe8789a8d4516 # v1.2.1
+    uses: valomedia/github-workflows/.github/workflows/ios-ci.yml@dced356558fff409addc69828448854793927b4f # v1.3.0
     with:
       workspace: Neo Keyboard.xcodeproj/project.xcworkspace
       scheme: German Neo
