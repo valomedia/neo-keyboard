@@ -11,69 +11,26 @@ on:
 permissions:
   contents: read
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
-  lint:
-    name: Lint
-    runs-on: macos-15
-    timeout-minutes: 30
-
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-
-      - name: Run SwiftLint
-        run: scripts/lint
-
-  build:
-    name: Build
-    runs-on: macos-15
-    timeout-minutes: 30
-
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-
-      - name: Build app and keyboard extension
-        run: |
-          set -euo pipefail
-          xcodebuild build \
-            -project "Neo Keyboard.xcodeproj" \
-            -scheme "German Neo" \
-            -destination "generic/platform=iOS" \
-            CODE_SIGNING_ALLOWED=NO
-
-  unit-tests:
-    name: Unit tests
-    runs-on: macos-15
-    timeout-minutes: 30
-
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-
-      - name: Select iOS simulator
-        id: simulator
-        run: |
-          set -euo pipefail
-          device_id="$(xcrun simctl list devices available | awk -F '[()]' '/iPhone 16/{print $2; exit}')"
-          if [ -z "$device_id" ]; then
-            device_id="$(xcrun simctl list devices available | awk -F '[()]' '/iPhone/{print $2; exit}')"
-          fi
-          if [ -z "$device_id" ]; then
-            echo "No available iPhone simulator found" >&2
-            exit 1
-          fi
-          echo "destination=platform=iOS Simulator,id=$device_id" >> "$GITHUB_OUTPUT"
-
-      - name: Run unit tests
-        run: |
-          set -euo pipefail
-          xcodebuild test \
-            -project "Neo Keyboard.xcodeproj" \
-            -scheme "German Neo" \
-            -destination "${{ steps.simulator.outputs.destination }}" \
-            CODE_SIGNING_ALLOWED=NO
+  ci:
+    uses: valomedia/github-workflows/.github/workflows/ios-ci.yml@0e24ac0bdeb710a9d37ff088d95fe8789a8d4516 # v1.2.1
+    with:
+      workspace: Neo Keyboard.xcodeproj/project.xcworkspace
+      scheme: German Neo
+      install-command: ''
+      xcode-path: ''
+      lint-command: scripts/lint
+      build-command: |
+        set -euo pipefail
+        xcodebuild build \
+          -project "Neo Keyboard.xcodeproj" \
+          -scheme "German Neo" \
+          -destination "generic/platform=iOS" \
+          CODE_SIGNING_ALLOWED=NO
+      unit-test-command: |
+        set -euo pipefail
+        xcodebuild test \
+          -project "Neo Keyboard.xcodeproj" \
+          -scheme "German Neo" \
+          -destination "platform=iOS Simulator,id=${IOS_CI_SIMULATOR_UDID}" \
+          CODE_SIGNING_ALLOWED=NO
